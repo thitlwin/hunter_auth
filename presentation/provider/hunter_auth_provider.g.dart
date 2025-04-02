@@ -6,7 +6,7 @@ part of 'hunter_auth_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$hunterAuthHash() => r'fff233f962f62b6d62a9db4b690a33b8ef0e156c';
+String _$hunterAuthHash() => r'538562533b70e4728bc050adc01dbcb4291ef2c0';
 
 /// See also [HunterAuth].
 @ProviderFor(HunterAuth)

@@ -1,7 +1,7 @@
-import 'package:admin_app/src/feature/hunter_auth/presentation/components/google_login_button.dart';
+import 'package:joy_app/src/feature/hunter_auth/presentation/components/google_login_button.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:admin_app/src/feature/hunter_auth/presentation/provider/hunter_auth_provider.dart';
+import 'package:joy_app/src/feature/hunter_auth/presentation/provider/hunter_auth_provider.dart';
 
 class HunterAuthScreen extends ConsumerWidget {
   const HunterAuthScreen({super.key});
@@ -31,7 +31,7 @@ class HunterAuthScreen extends ConsumerWidget {
                     children: <Widget>[
                       SizedBox(height: 30), // Adjust as needed
                       Image.asset(
-                        'assets/images/ic_login_page.png',
+                        'assets/images/ic_launcher.png',
                         height: 200, // Adjust as needed
                       ),
                       SizedBox(height: 20), // Adjust as needed

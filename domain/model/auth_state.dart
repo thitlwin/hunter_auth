@@ -1,4 +1,4 @@
-import 'package:admin_app/src/feature/hunter_auth/domain/model/auth_user.dart';
+import 'package:joy_app/src/feature/hunter_auth/domain/model/auth_user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'auth_state.freezed.dart';

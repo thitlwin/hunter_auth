@@ -1,13 +1,13 @@
-import 'package:admin_app/flavors.dart';
-import 'package:admin_app/src/feature/hunter_auth/domain/model/auth_user.dart';
-import 'package:admin_app/src/feature/monks/domain/model/failure.dart';
+import 'package:joy_app/src/core/utils/failure.dart';
+import 'package:joy_app/src/feature/hunter_auth/domain/model/auth_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:admin_app/src/feature/hunter_auth/domain/repository/hunter_auth_repository_interface.dart';
+import 'package:joy_app/src/feature/hunter_auth/domain/repository/hunter_auth_repository_interface.dart';
+import 'package:joy_app/src/flavors.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'hunter_auth_repository.g.dart';
@@ -86,12 +86,3 @@ final class HunterAuthRepository implements IHunterAuthRepository {
     await _googleSignIn.signOut();
   }
 }
-
-// final authStateChangesProvider = StreamProvider.autoDispose<User?>((ref) {
-//   return FirebaseAuth.instance.authStateChanges();
-// });
-
-// Change from autoDispose to a regular StreamProvider
-// final authStateChangesProvider = StreamProvider<User?>((ref) {
-//   return FirebaseAuth.instance.authStateChanges();
-// });

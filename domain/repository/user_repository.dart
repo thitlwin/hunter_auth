@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:admin_app/src/feature/hunter_auth/domain/model/auth_user.dart';
-import 'package:admin_app/src/feature/hunter_auth/domain/repository/constants/firebase_collection_name.dart';
-import 'package:admin_app/src/feature/hunter_auth/domain/repository/constants/firebase_field_name.dart';
+import 'package:joy_app/src/feature/hunter_auth/domain/model/auth_user.dart';
+import 'package:joy_app/src/feature/hunter_auth/domain/repository/constants/firebase_collection_name.dart';
+import 'package:joy_app/src/feature/hunter_auth/domain/repository/constants/firebase_field_name.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'user_repository.g.dart';

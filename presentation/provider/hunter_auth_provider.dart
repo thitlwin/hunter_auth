@@ -1,9 +1,7 @@
-import 'package:admin_app/src/feature/hunter_auth/domain/model/auth_user.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
-import 'package:admin_app/src/feature/hunter_auth/data/repository/hunter_auth_repository.dart';
-import 'package:admin_app/src/feature/hunter_auth/domain/model/auth_state.dart';
-import 'package:admin_app/src/feature/hunter_auth/domain/repository/user_repository.dart';
+import 'package:joy_app/src/feature/hunter_auth/domain/model/auth_user.dart';
+import 'package:joy_app/src/feature/hunter_auth/data/repository/hunter_auth_repository.dart';
+import 'package:joy_app/src/feature/hunter_auth/domain/model/auth_state.dart';
+import 'package:joy_app/src/feature/hunter_auth/domain/repository/user_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'hunter_auth_provider.g.dart';
