@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'auth_state.dart';
+part of 'login_screen_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,33 +14,38 @@ part of 'auth_state.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AuthState {
+mixin _$LoginScreenState {
   Map<String, String>? get formErrors;
   bool get isLoading;
   bool get isSuccess;
-  AuthUser? get user;
-  String? get message;
+  String? get phone;
+  String? get password;
+  String? get messageKey;
 
-  /// Create a copy of AuthState
+  /// Create a copy of LoginScreenState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AuthStateCopyWith<AuthState> get copyWith =>
-      _$AuthStateCopyWithImpl<AuthState>(this as AuthState, _$identity);
+  $LoginScreenStateCopyWith<LoginScreenState> get copyWith =>
+      _$LoginScreenStateCopyWithImpl<LoginScreenState>(
+          this as LoginScreenState, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AuthState &&
+            other is LoginScreenState &&
             const DeepCollectionEquality()
                 .equals(other.formErrors, formErrors) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.isSuccess, isSuccess) ||
                 other.isSuccess == isSuccess) &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.messageKey, messageKey) ||
+                other.messageKey == messageKey));
   }
 
   @override
@@ -49,38 +54,40 @@ mixin _$AuthState {
       const DeepCollectionEquality().hash(formErrors),
       isLoading,
       isSuccess,
-      user,
-      message);
+      phone,
+      password,
+      messageKey);
 
   @override
   String toString() {
-    return 'AuthState(formErrors: $formErrors, isLoading: $isLoading, isSuccess: $isSuccess, user: $user, message: $message)';
+    return 'LoginScreenState(formErrors: $formErrors, isLoading: $isLoading, isSuccess: $isSuccess, phone: $phone, password: $password, messageKey: $messageKey)';
   }
 }
 
 /// @nodoc
-abstract mixin class $AuthStateCopyWith<$Res> {
-  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) _then) =
-      _$AuthStateCopyWithImpl;
+abstract mixin class $LoginScreenStateCopyWith<$Res> {
+  factory $LoginScreenStateCopyWith(
+          LoginScreenState value, $Res Function(LoginScreenState) _then) =
+      _$LoginScreenStateCopyWithImpl;
   @useResult
   $Res call(
       {Map<String, String>? formErrors,
       bool isLoading,
       bool isSuccess,
-      AuthUser? user,
-      String? message});
-
-  $AuthUserCopyWith<$Res>? get user;
+      String? phone,
+      String? password,
+      String? messageKey});
 }
 
 /// @nodoc
-class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
-  _$AuthStateCopyWithImpl(this._self, this._then);
+class _$LoginScreenStateCopyWithImpl<$Res>
+    implements $LoginScreenStateCopyWith<$Res> {
+  _$LoginScreenStateCopyWithImpl(this._self, this._then);
 
-  final AuthState _self;
-  final $Res Function(AuthState) _then;
+  final LoginScreenState _self;
+  final $Res Function(LoginScreenState) _then;
 
-  /// Create a copy of AuthState
+  /// Create a copy of LoginScreenState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -88,8 +95,9 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
     Object? formErrors = freezed,
     Object? isLoading = null,
     Object? isSuccess = null,
-    Object? user = freezed,
-    Object? message = freezed,
+    Object? phone = freezed,
+    Object? password = freezed,
+    Object? messageKey = freezed,
   }) {
     return _then(_self.copyWith(
       formErrors: freezed == formErrors
@@ -104,41 +112,32 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
           ? _self.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      user: freezed == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as AuthUser?,
-      message: freezed == message
-          ? _self.message
-          : message // ignore: cast_nullable_to_non_nullable
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      messageKey: freezed == messageKey
+          ? _self.messageKey
+          : messageKey // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AuthUserCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $AuthUserCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
-    });
   }
 }
 
 /// @nodoc
 
-class _AuthState implements AuthState {
-  const _AuthState(
+class _LoginScreenState implements LoginScreenState {
+  const _LoginScreenState(
       {required final Map<String, String>? formErrors,
       required this.isLoading,
       required this.isSuccess,
-      required this.user,
-      required this.message})
+      required this.phone,
+      required this.password,
+      required this.messageKey})
       : _formErrors = formErrors;
 
   final Map<String, String>? _formErrors;
@@ -156,31 +155,36 @@ class _AuthState implements AuthState {
   @override
   final bool isSuccess;
   @override
-  final AuthUser? user;
+  final String? phone;
   @override
-  final String? message;
+  final String? password;
+  @override
+  final String? messageKey;
 
-  /// Create a copy of AuthState
+  /// Create a copy of LoginScreenState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AuthStateCopyWith<_AuthState> get copyWith =>
-      __$AuthStateCopyWithImpl<_AuthState>(this, _$identity);
+  _$LoginScreenStateCopyWith<_LoginScreenState> get copyWith =>
+      __$LoginScreenStateCopyWithImpl<_LoginScreenState>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AuthState &&
+            other is _LoginScreenState &&
             const DeepCollectionEquality()
                 .equals(other._formErrors, _formErrors) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.isSuccess, isSuccess) ||
                 other.isSuccess == isSuccess) &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.messageKey, messageKey) ||
+                other.messageKey == messageKey));
   }
 
   @override
@@ -189,42 +193,42 @@ class _AuthState implements AuthState {
       const DeepCollectionEquality().hash(_formErrors),
       isLoading,
       isSuccess,
-      user,
-      message);
+      phone,
+      password,
+      messageKey);
 
   @override
   String toString() {
-    return 'AuthState(formErrors: $formErrors, isLoading: $isLoading, isSuccess: $isSuccess, user: $user, message: $message)';
+    return 'LoginScreenState(formErrors: $formErrors, isLoading: $isLoading, isSuccess: $isSuccess, phone: $phone, password: $password, messageKey: $messageKey)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$AuthStateCopyWith<$Res>
-    implements $AuthStateCopyWith<$Res> {
-  factory _$AuthStateCopyWith(
-          _AuthState value, $Res Function(_AuthState) _then) =
-      __$AuthStateCopyWithImpl;
+abstract mixin class _$LoginScreenStateCopyWith<$Res>
+    implements $LoginScreenStateCopyWith<$Res> {
+  factory _$LoginScreenStateCopyWith(
+          _LoginScreenState value, $Res Function(_LoginScreenState) _then) =
+      __$LoginScreenStateCopyWithImpl;
   @override
   @useResult
   $Res call(
       {Map<String, String>? formErrors,
       bool isLoading,
       bool isSuccess,
-      AuthUser? user,
-      String? message});
-
-  @override
-  $AuthUserCopyWith<$Res>? get user;
+      String? phone,
+      String? password,
+      String? messageKey});
 }
 
 /// @nodoc
-class __$AuthStateCopyWithImpl<$Res> implements _$AuthStateCopyWith<$Res> {
-  __$AuthStateCopyWithImpl(this._self, this._then);
+class __$LoginScreenStateCopyWithImpl<$Res>
+    implements _$LoginScreenStateCopyWith<$Res> {
+  __$LoginScreenStateCopyWithImpl(this._self, this._then);
 
-  final _AuthState _self;
-  final $Res Function(_AuthState) _then;
+  final _LoginScreenState _self;
+  final $Res Function(_LoginScreenState) _then;
 
-  /// Create a copy of AuthState
+  /// Create a copy of LoginScreenState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -232,10 +236,11 @@ class __$AuthStateCopyWithImpl<$Res> implements _$AuthStateCopyWith<$Res> {
     Object? formErrors = freezed,
     Object? isLoading = null,
     Object? isSuccess = null,
-    Object? user = freezed,
-    Object? message = freezed,
+    Object? phone = freezed,
+    Object? password = freezed,
+    Object? messageKey = freezed,
   }) {
-    return _then(_AuthState(
+    return _then(_LoginScreenState(
       formErrors: freezed == formErrors
           ? _self._formErrors
           : formErrors // ignore: cast_nullable_to_non_nullable
@@ -248,29 +253,19 @@ class __$AuthStateCopyWithImpl<$Res> implements _$AuthStateCopyWith<$Res> {
           ? _self.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      user: freezed == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as AuthUser?,
-      message: freezed == message
-          ? _self.message
-          : message // ignore: cast_nullable_to_non_nullable
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      messageKey: freezed == messageKey
+          ? _self.messageKey
+          : messageKey // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AuthUserCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $AuthUserCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
-    });
   }
 }
 

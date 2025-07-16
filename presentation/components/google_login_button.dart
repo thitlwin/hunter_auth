@@ -28,9 +28,9 @@ class GoogleLoginButton extends StatelessWidget {
       style: OutlinedButton.styleFrom(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         side: BorderSide(color: Colors.grey.shade300), // Light grey border
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0), // Adjust border radius
-        ),
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.circular(8.0), // Adjust border radius
+        // ),
         backgroundColor: Colors.white, // Button background color
         foregroundColor: Colors.black87, // Default text color
       ),
