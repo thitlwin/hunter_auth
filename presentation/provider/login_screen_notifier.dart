@@ -145,7 +145,7 @@ class LoginScreenNotifier extends _$LoginScreenNotifier {
       _handleErrorState(Failure.unexpectedError(
           e.message ?? L10nConstants.errorSomethingWentWrong));
     } catch (e) {
-      // Handle other errors (e.g., from Facebook SDK, network issues).
+      // Handle other errors (e.g., from Facebook SDK or network issues).
       _handleErrorState(
           Failure.unexpectedError(L10nConstants.errorSomethingWentWrong));
     }

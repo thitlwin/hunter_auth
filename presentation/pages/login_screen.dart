@@ -153,7 +153,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           ),
 
                           const SizedBox(height: 24),
-                          Row(
+                          // TODO - to be implemented at v2.0
+                          /* Row(
                             children: <Widget>[
                               const Expanded(child: Divider()),
                               Padding(
@@ -170,7 +171,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           FacebookLoginButton(onPressed: () {
                             loginFormNotifier.loginWithFacebook();
                           }),
-                          SizedBox(height: 24),
+                          SizedBox(height: 24), */
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
