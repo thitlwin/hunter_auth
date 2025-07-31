@@ -7,7 +7,6 @@ import 'package:joy_app/l10n/generated/app_localizations.dart';
 import 'package:joy_app/src/common_widgets/go_back_button.dart';
 import 'package:joy_app/src/common_widgets/screenoverlay_loading_widget.dart';
 import 'package:joy_app/src/common_widgets/text_field_widget.dart';
-import 'package:joy_app/src/feature/login/presentation/components/facebook_login_button.dart';
 import 'package:joy_app/src/feature/login/presentation/provider/login_screen_notifier.dart';
 import 'package:joy_app/l10n/l10n_constants.dart';
 import 'package:joy_app/l10n/l10n_helper.dart';
@@ -58,7 +57,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           Positioned(
             left: formPadding,
             top: 50,
-            child: GoBackButton(
+            child: IconButton(
+              color: Colors.white,
+              icon: const Icon(Icons.arrow_back), // Back button icon
               onPressed: () {
                 context.pop();
               },

@@ -7,7 +7,7 @@ part of 'login_screen_notifier.dart';
 // **************************************************************************
 
 String _$loginScreenNotifierHash() =>
-    r'af5f538efaa5580a037281243604053e2f3bfbe8';
+    r'cc51d82294e67021c90249b3608478b287785392';
 
 /// See also [LoginScreenNotifier].
 @ProviderFor(LoginScreenNotifier)

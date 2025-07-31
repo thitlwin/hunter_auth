@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:joy_app/src/core/utils/failure.dart';
-import 'package:joy_app/src/feature/login/data/model/login_response.dart';
 import 'package:joy_app/src/feature/authentication/data/repository/hunter_auth_repository.dart';
 import 'package:joy_app/src/feature/login/domain/model/login_screen_state.dart';
 import 'package:joy_app/src/feature/authentication/presentation/provider/hunter_auth_provider.dart';
 import 'package:joy_app/l10n/l10n_constants.dart';
+import 'package:joy_app/src/feature/profile/domain/model/profile_mappers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'login_screen_notifier.g.dart';
@@ -33,12 +33,11 @@ class LoginScreenNotifier extends _$LoginScreenNotifier {
     final authRepository = ref.read(hunterAuthRepositoryProvider);
     state = state.copyWith(isLoading: true, messageKey: null);
     final result = await authRepository.login(phone, password);
-
     result.fold((left) {
       _handleErrorState(left);
-    }, (right) {
+    }, (right) async {
       final authNotifier = ref.read(hunterAuthProvider.notifier);
-      authNotifier.setAuthUser(right.toAuthDomainModel());
+      await authNotifier.setAuthUser(right.data.toAuthDomainModel());
       state = state.copyWith(
         isLoading: false,
         messageKey: L10nConstants.successLogin,
