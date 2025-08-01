@@ -13,14 +13,14 @@ String _$loginScreenNotifierHash() =>
 @ProviderFor(LoginScreenNotifier)
 final loginScreenNotifierProvider =
     AutoDisposeNotifierProvider<LoginScreenNotifier, LoginScreenState>.internal(
-  LoginScreenNotifier.new,
-  name: r'loginScreenNotifierProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$loginScreenNotifierHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      LoginScreenNotifier.new,
+      name: r'loginScreenNotifierProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$loginScreenNotifierHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$LoginScreenNotifier = AutoDisposeNotifier<LoginScreenState>;
 // ignore_for_file: type=lint
