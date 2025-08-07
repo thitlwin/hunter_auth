@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:joy_app/gen/assets.gen.dart';
 import 'package:joy_app/l10n/generated/app_localizations.dart';
-import 'package:joy_app/src/common_widgets/go_back_button.dart';
 import 'package:joy_app/src/common_widgets/screenoverlay_loading_widget.dart';
 import 'package:joy_app/src/common_widgets/text_field_widget.dart';
 import 'package:joy_app/src/feature/login/presentation/provider/login_screen_notifier.dart';

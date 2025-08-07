@@ -15,135 +15,118 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$LoginRequest {
-  String get phone;
-  String get password;
 
-  /// Create a copy of LoginRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $LoginRequestCopyWith<LoginRequest> get copyWith =>
-      _$LoginRequestCopyWithImpl<LoginRequest>(
-          this as LoginRequest, _$identity);
+ String get phone; String get password;
+/// Create a copy of LoginRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$LoginRequestCopyWith<LoginRequest> get copyWith => _$LoginRequestCopyWithImpl<LoginRequest>(this as LoginRequest, _$identity);
 
   /// Serializes this LoginRequest to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is LoginRequest &&
-            (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.password, password) ||
-                other.password == password));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, phone, password);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginRequest&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.password, password) || other.password == password));
+}
 
-  @override
-  String toString() {
-    return 'LoginRequest(phone: $phone, password: $password)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,phone,password);
+
+@override
+String toString() {
+  return 'LoginRequest(phone: $phone, password: $password)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $LoginRequestCopyWith<$Res> {
-  factory $LoginRequestCopyWith(
-          LoginRequest value, $Res Function(LoginRequest) _then) =
-      _$LoginRequestCopyWithImpl;
-  @useResult
-  $Res call({String phone, String password});
-}
+abstract mixin class $LoginRequestCopyWith<$Res>  {
+  factory $LoginRequestCopyWith(LoginRequest value, $Res Function(LoginRequest) _then) = _$LoginRequestCopyWithImpl;
+@useResult
+$Res call({
+ String phone, String password
+});
 
+
+
+
+}
 /// @nodoc
-class _$LoginRequestCopyWithImpl<$Res> implements $LoginRequestCopyWith<$Res> {
+class _$LoginRequestCopyWithImpl<$Res>
+    implements $LoginRequestCopyWith<$Res> {
   _$LoginRequestCopyWithImpl(this._self, this._then);
 
   final LoginRequest _self;
   final $Res Function(LoginRequest) _then;
 
-  /// Create a copy of LoginRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? phone = null,
-    Object? password = null,
-  }) {
-    return _then(_self.copyWith(
-      phone: null == phone
-          ? _self.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of LoginRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? phone = null,Object? password = null,}) {
+  return _then(_self.copyWith(
+phone: null == phone ? _self.phone : phone // ignore: cast_nullable_to_non_nullable
+as String,password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
+
+}
+
 
 /// @nodoc
 @JsonSerializable()
+
 class _LoginRequest implements LoginRequest {
   const _LoginRequest({required this.phone, required this.password});
-  factory _LoginRequest.fromJson(Map<String, dynamic> json) =>
-      _$LoginRequestFromJson(json);
+  factory _LoginRequest.fromJson(Map<String, dynamic> json) => _$LoginRequestFromJson(json);
 
-  @override
-  final String phone;
-  @override
-  final String password;
+@override final  String phone;
+@override final  String password;
 
-  /// Create a copy of LoginRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$LoginRequestCopyWith<_LoginRequest> get copyWith =>
-      __$LoginRequestCopyWithImpl<_LoginRequest>(this, _$identity);
+/// Create a copy of LoginRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$LoginRequestCopyWith<_LoginRequest> get copyWith => __$LoginRequestCopyWithImpl<_LoginRequest>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$LoginRequestToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$LoginRequestToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _LoginRequest &&
-            (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.password, password) ||
-                other.password == password));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LoginRequest&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.password, password) || other.password == password));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, phone, password);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,phone,password);
 
-  @override
-  String toString() {
-    return 'LoginRequest(phone: $phone, password: $password)';
-  }
+@override
+String toString() {
+  return 'LoginRequest(phone: $phone, password: $password)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$LoginRequestCopyWith<$Res>
-    implements $LoginRequestCopyWith<$Res> {
-  factory _$LoginRequestCopyWith(
-          _LoginRequest value, $Res Function(_LoginRequest) _then) =
-      __$LoginRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String phone, String password});
-}
+abstract mixin class _$LoginRequestCopyWith<$Res> implements $LoginRequestCopyWith<$Res> {
+  factory _$LoginRequestCopyWith(_LoginRequest value, $Res Function(_LoginRequest) _then) = __$LoginRequestCopyWithImpl;
+@override @useResult
+$Res call({
+ String phone, String password
+});
 
+
+
+
+}
 /// @nodoc
 class __$LoginRequestCopyWithImpl<$Res>
     implements _$LoginRequestCopyWith<$Res> {
@@ -152,25 +135,17 @@ class __$LoginRequestCopyWithImpl<$Res>
   final _LoginRequest _self;
   final $Res Function(_LoginRequest) _then;
 
-  /// Create a copy of LoginRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? phone = null,
-    Object? password = null,
-  }) {
-    return _then(_LoginRequest(
-      phone: null == phone
-          ? _self.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of LoginRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? phone = null,Object? password = null,}) {
+  return _then(_LoginRequest(
+phone: null == phone ? _self.phone : phone // ignore: cast_nullable_to_non_nullable
+as String,password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on
