@@ -7,14 +7,14 @@ part of 'login_response.dart';
 // **************************************************************************
 
 _AddressDto _$AddressDtoFromJson(Map<String, dynamic> json) => _AddressDto(
-  id: (json['id'] as num).toInt(),
-  region: (json['region'] as num).toInt(),
-  city: (json['city'] as num).toInt(),
-  township: (json['township'] as num).toInt(),
-  streetAddress: json['street_address'] as String,
-  isDeliveryAddress: (json['is_delivery_address'] as num).toInt(),
-  isPrimaryAddress: (json['is_primary_address'] as num).toInt(),
-);
+      id: (json['id'] as num).toInt(),
+      region: (json['region'] as num).toInt(),
+      city: (json['city'] as num).toInt(),
+      township: (json['township'] as num).toInt(),
+      streetAddress: json['street_address'] as String,
+      isDeliveryAddress: (json['is_delivery_address'] as num).toInt(),
+      isPrimaryAddress: (json['is_primary_address'] as num).toInt(),
+    );
 
 Map<String, dynamic> _$AddressDtoToJson(_AddressDto instance) =>
     <String, dynamic>{
