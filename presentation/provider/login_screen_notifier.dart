@@ -3,7 +3,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:joy_app/src/core/utils/failure.dart';
 import 'package:joy_app/src/feature/authentication/data/repository/hunter_auth_repository.dart';
 import 'package:joy_app/src/feature/login/domain/model/login_screen_state.dart';
-import 'package:joy_app/src/feature/authentication/presentation/provider/hunter_auth_provider.dart';
+import 'package:joy_app/src/feature/authentication/presentation/provider/hunter_auth_notifier.dart';
 import 'package:joy_app/l10n/l10n_constants.dart';
 import 'package:joy_app/src/feature/profile/domain/model/profile_mappers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -36,7 +36,7 @@ class LoginScreenNotifier extends _$LoginScreenNotifier {
     result.fold((left) {
       _handleErrorState(left);
     }, (right) async {
-      final authNotifier = ref.read(hunterAuthProvider.notifier);
+      final authNotifier = ref.read(hunterAuthNotifierProvider.notifier);
       await authNotifier.setAuthUser(right.data.toAuthDomainModel());
       state = state.copyWith(
         isLoading: false,
