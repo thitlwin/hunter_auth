@@ -21,6 +21,7 @@ mixin _$LoginScreenState {
   String? get phone;
   String? get password;
   String? get messageKey;
+  bool get isAppleSignInAvailable;
 
   /// Create a copy of LoginScreenState
   /// with the given fields replaced by the non-null parameter values.
@@ -45,7 +46,9 @@ mixin _$LoginScreenState {
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.messageKey, messageKey) ||
-                other.messageKey == messageKey));
+                other.messageKey == messageKey) &&
+            (identical(other.isAppleSignInAvailable, isAppleSignInAvailable) ||
+                other.isAppleSignInAvailable == isAppleSignInAvailable));
   }
 
   @override
@@ -56,11 +59,12 @@ mixin _$LoginScreenState {
       isSuccess,
       phone,
       password,
-      messageKey);
+      messageKey,
+      isAppleSignInAvailable);
 
   @override
   String toString() {
-    return 'LoginScreenState(formErrors: $formErrors, isLoading: $isLoading, isSuccess: $isSuccess, phone: $phone, password: $password, messageKey: $messageKey)';
+    return 'LoginScreenState(formErrors: $formErrors, isLoading: $isLoading, isSuccess: $isSuccess, phone: $phone, password: $password, messageKey: $messageKey, isAppleSignInAvailable: $isAppleSignInAvailable)';
   }
 }
 
@@ -76,7 +80,8 @@ abstract mixin class $LoginScreenStateCopyWith<$Res> {
       bool isSuccess,
       String? phone,
       String? password,
-      String? messageKey});
+      String? messageKey,
+      bool isAppleSignInAvailable});
 }
 
 /// @nodoc
@@ -98,6 +103,7 @@ class _$LoginScreenStateCopyWithImpl<$Res>
     Object? phone = freezed,
     Object? password = freezed,
     Object? messageKey = freezed,
+    Object? isAppleSignInAvailable = null,
   }) {
     return _then(_self.copyWith(
       formErrors: freezed == formErrors
@@ -124,6 +130,10 @@ class _$LoginScreenStateCopyWithImpl<$Res>
           ? _self.messageKey
           : messageKey // ignore: cast_nullable_to_non_nullable
               as String?,
+      isAppleSignInAvailable: null == isAppleSignInAvailable
+          ? _self.isAppleSignInAvailable
+          : isAppleSignInAvailable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -137,7 +147,8 @@ class _LoginScreenState implements LoginScreenState {
       required this.isSuccess,
       required this.phone,
       required this.password,
-      required this.messageKey})
+      required this.messageKey,
+      required this.isAppleSignInAvailable})
       : _formErrors = formErrors;
 
   final Map<String, String>? _formErrors;
@@ -160,6 +171,8 @@ class _LoginScreenState implements LoginScreenState {
   final String? password;
   @override
   final String? messageKey;
+  @override
+  final bool isAppleSignInAvailable;
 
   /// Create a copy of LoginScreenState
   /// with the given fields replaced by the non-null parameter values.
@@ -184,7 +197,9 @@ class _LoginScreenState implements LoginScreenState {
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.messageKey, messageKey) ||
-                other.messageKey == messageKey));
+                other.messageKey == messageKey) &&
+            (identical(other.isAppleSignInAvailable, isAppleSignInAvailable) ||
+                other.isAppleSignInAvailable == isAppleSignInAvailable));
   }
 
   @override
@@ -195,11 +210,12 @@ class _LoginScreenState implements LoginScreenState {
       isSuccess,
       phone,
       password,
-      messageKey);
+      messageKey,
+      isAppleSignInAvailable);
 
   @override
   String toString() {
-    return 'LoginScreenState(formErrors: $formErrors, isLoading: $isLoading, isSuccess: $isSuccess, phone: $phone, password: $password, messageKey: $messageKey)';
+    return 'LoginScreenState(formErrors: $formErrors, isLoading: $isLoading, isSuccess: $isSuccess, phone: $phone, password: $password, messageKey: $messageKey, isAppleSignInAvailable: $isAppleSignInAvailable)';
   }
 }
 
@@ -217,7 +233,8 @@ abstract mixin class _$LoginScreenStateCopyWith<$Res>
       bool isSuccess,
       String? phone,
       String? password,
-      String? messageKey});
+      String? messageKey,
+      bool isAppleSignInAvailable});
 }
 
 /// @nodoc
@@ -239,6 +256,7 @@ class __$LoginScreenStateCopyWithImpl<$Res>
     Object? phone = freezed,
     Object? password = freezed,
     Object? messageKey = freezed,
+    Object? isAppleSignInAvailable = null,
   }) {
     return _then(_LoginScreenState(
       formErrors: freezed == formErrors
@@ -265,6 +283,10 @@ class __$LoginScreenStateCopyWithImpl<$Res>
           ? _self.messageKey
           : messageKey // ignore: cast_nullable_to_non_nullable
               as String?,
+      isAppleSignInAvailable: null == isAppleSignInAvailable
+          ? _self.isAppleSignInAvailable
+          : isAppleSignInAvailable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }

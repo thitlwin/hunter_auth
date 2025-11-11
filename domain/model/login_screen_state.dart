@@ -11,6 +11,7 @@ abstract class LoginScreenState with _$LoginScreenState {
     required String? phone,
     required String? password,
     required String? messageKey,
+    required bool isAppleSignInAvailable,
   }) = _LoginScreenState;
 
   factory LoginScreenState.initial() => LoginScreenState(
@@ -20,5 +21,6 @@ abstract class LoginScreenState with _$LoginScreenState {
         messageKey: null,
         phone: null,
         password: null,
+        isAppleSignInAvailable: false,
       );
 }

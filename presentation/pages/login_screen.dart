@@ -6,6 +6,7 @@ import 'package:joy_app/gen/assets.gen.dart';
 import 'package:joy_app/l10n/generated/app_localizations.dart';
 import 'package:joy_app/src/common_widgets/screenoverlay_loading_widget.dart';
 import 'package:joy_app/src/common_widgets/text_field_widget.dart';
+import 'package:joy_app/src/feature/login/presentation/components/social_login_button.dart';
 import 'package:joy_app/src/feature/login/presentation/provider/login_screen_notifier.dart';
 import 'package:joy_app/l10n/l10n_constants.dart';
 import 'package:joy_app/l10n/l10n_helper.dart';
@@ -32,7 +33,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final loginFormState = ref.watch(loginScreenNotifierProvider);
+    final loginFormState = ref.watch(loginScreenNotifierProvider).valueOrNull;
     final loginFormNotifier = ref.read(loginScreenNotifierProvider.notifier);
 
     final screenWidth = MediaQuery.sizeOf(context).width;
@@ -93,14 +94,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             style: TextStyle(fontSize: 16),
                           ),
                           // SizedBox(height: 30), // Adjust as needed
-                          if (!loginFormState.isSuccess &&
-                              loginFormState.messageKey != null)
+                          if (loginFormState?.isSuccess != true &&
+                              loginFormState?.messageKey != null)
                             Padding(
                               padding: const EdgeInsets.only(top: 16.0),
                               child: Center(
                                 child: Text(
+                                  textAlign: TextAlign.center,
                                   context.getL10nMessage(
-                                          loginFormState.messageKey) ??
+                                          loginFormState?.messageKey) ??
                                       '',
                                   style: theme.textTheme.bodyMedium?.copyWith(
                                     color: theme.colorScheme.error,
@@ -116,7 +118,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             controller: phoneController,
                             onChanged: loginFormNotifier.updatePhoneNumber,
                             errorText: context.getL10nMessage(loginFormState
-                                .formErrors?[L10nConstants.phone]),
+                                ?.formErrors?[L10nConstants.phone]),
                           ),
                           buildTextField(
                             label: locale.password,
@@ -127,7 +129,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             controller: passwordController,
                             onChanged: loginFormNotifier.updatePassword,
                             errorText: context.getL10nMessage(loginFormState
-                                .formErrors?[L10nConstants.password]),
+                                ?.formErrors?[L10nConstants.password]),
                           ),
                           Align(
                             alignment: Alignment.centerRight,
@@ -154,7 +156,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                           const SizedBox(height: 24),
                           // TODO - to be implemented at v2.0
-                          /* Row(
+                          Row(
                             children: <Widget>[
                               const Expanded(child: Divider()),
                               Padding(
@@ -167,11 +169,37 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                               const Expanded(child: Divider()),
                             ],
                           ),
-                          const SizedBox(height: 24),
-                          FacebookLoginButton(onPressed: () {
-                            loginFormNotifier.loginWithFacebook();
-                          }),
-                          SizedBox(height: 24), */
+                          const SizedBox(height: 12),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                if (loginFormState?.isAppleSignInAvailable ==
+                                    true) ...[
+                                  const SizedBox(height: 24),
+                                  SocialLoginButton(
+                                    label: null, //locale.loginWithApple,
+                                    icon: Assets.icons.apple
+                                        .image(width: 24, height: 24),
+                                    onPressed: loginFormNotifier.loginWithApple,
+                                  ),
+                                  const SizedBox(width: 12),
+                                ],
+                                SocialLoginButton(
+                                  label: null, //locale.loginWithFacebook,
+                                  icon: Assets.icons.facebook
+                                      .image(width: 24, height: 24),
+                                  onPressed:
+                                      loginFormNotifier.loginWithFacebook,
+                                ),
+                                const SizedBox(width: 12),
+                                SocialLoginButton(
+                                  label: null, //locale.loginWithGoogle,
+                                  icon: Assets.images.icGoogle
+                                      .image(width: 24, height: 24),
+                                  onPressed: loginFormNotifier.loginWithGoogle,
+                                ),
+                              ]),
+                          const SizedBox(height: 12),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
@@ -193,7 +221,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               ),
             ),
           ),
-          if (loginFormState.isLoading) ScreenoverlayLoadingWidget()
+          if (loginFormState?.isLoading == true) ScreenoverlayLoadingWidget()
         ],
       ),
     );

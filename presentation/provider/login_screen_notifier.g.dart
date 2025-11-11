@@ -7,12 +7,12 @@ part of 'login_screen_notifier.dart';
 // **************************************************************************
 
 String _$loginScreenNotifierHash() =>
-    r'c987d62b70658319b07fd865a7b7f3c1bb3877f5';
+    r'a1026d4d5d78d8e857f3fe5c3a4c07564e335b37';
 
 /// See also [LoginScreenNotifier].
 @ProviderFor(LoginScreenNotifier)
-final loginScreenNotifierProvider =
-    AutoDisposeNotifierProvider<LoginScreenNotifier, LoginScreenState>.internal(
+final loginScreenNotifierProvider = AutoDisposeAsyncNotifierProvider<
+    LoginScreenNotifier, LoginScreenState>.internal(
   LoginScreenNotifier.new,
   name: r'loginScreenNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,6 +22,6 @@ final loginScreenNotifierProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$LoginScreenNotifier = AutoDisposeNotifier<LoginScreenState>;
+typedef _$LoginScreenNotifier = AutoDisposeAsyncNotifier<LoginScreenState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -21,10 +21,12 @@ mixin _$AddressDto {
   int get township;
   @JsonKey(name: 'street_address')
   String get streetAddress;
+  @BoolToIntConverter()
   @JsonKey(name: 'is_delivery_address')
-  int get isDeliveryAddress;
+  bool get isDeliveryAddress;
   @JsonKey(name: 'is_primary_address')
-  int get isPrimaryAddress;
+  @BoolToIntConverter()
+  bool get isPrimaryAddress;
 
   /// Create a copy of AddressDto
   /// with the given fields replaced by the non-null parameter values.
@@ -77,8 +79,12 @@ abstract mixin class $AddressDtoCopyWith<$Res> {
       int city,
       int township,
       @JsonKey(name: 'street_address') String streetAddress,
-      @JsonKey(name: 'is_delivery_address') int isDeliveryAddress,
-      @JsonKey(name: 'is_primary_address') int isPrimaryAddress});
+      @BoolToIntConverter()
+      @JsonKey(name: 'is_delivery_address')
+      bool isDeliveryAddress,
+      @JsonKey(name: 'is_primary_address')
+      @BoolToIntConverter()
+      bool isPrimaryAddress});
 }
 
 /// @nodoc
@@ -125,11 +131,11 @@ class _$AddressDtoCopyWithImpl<$Res> implements $AddressDtoCopyWith<$Res> {
       isDeliveryAddress: null == isDeliveryAddress
           ? _self.isDeliveryAddress
           : isDeliveryAddress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       isPrimaryAddress: null == isPrimaryAddress
           ? _self.isPrimaryAddress
           : isPrimaryAddress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
     ));
   }
 }
@@ -143,8 +149,12 @@ class _AddressDto implements AddressDto {
       required this.city,
       required this.township,
       @JsonKey(name: 'street_address') required this.streetAddress,
-      @JsonKey(name: 'is_delivery_address') required this.isDeliveryAddress,
-      @JsonKey(name: 'is_primary_address') required this.isPrimaryAddress});
+      @BoolToIntConverter()
+      @JsonKey(name: 'is_delivery_address')
+      required this.isDeliveryAddress,
+      @JsonKey(name: 'is_primary_address')
+      @BoolToIntConverter()
+      required this.isPrimaryAddress});
   factory _AddressDto.fromJson(Map<String, dynamic> json) =>
       _$AddressDtoFromJson(json);
 
@@ -160,11 +170,13 @@ class _AddressDto implements AddressDto {
   @JsonKey(name: 'street_address')
   final String streetAddress;
   @override
+  @BoolToIntConverter()
   @JsonKey(name: 'is_delivery_address')
-  final int isDeliveryAddress;
+  final bool isDeliveryAddress;
   @override
   @JsonKey(name: 'is_primary_address')
-  final int isPrimaryAddress;
+  @BoolToIntConverter()
+  final bool isPrimaryAddress;
 
   /// Create a copy of AddressDto
   /// with the given fields replaced by the non-null parameter values.
@@ -224,8 +236,12 @@ abstract mixin class _$AddressDtoCopyWith<$Res>
       int city,
       int township,
       @JsonKey(name: 'street_address') String streetAddress,
-      @JsonKey(name: 'is_delivery_address') int isDeliveryAddress,
-      @JsonKey(name: 'is_primary_address') int isPrimaryAddress});
+      @BoolToIntConverter()
+      @JsonKey(name: 'is_delivery_address')
+      bool isDeliveryAddress,
+      @JsonKey(name: 'is_primary_address')
+      @BoolToIntConverter()
+      bool isPrimaryAddress});
 }
 
 /// @nodoc
@@ -272,11 +288,11 @@ class __$AddressDtoCopyWithImpl<$Res> implements _$AddressDtoCopyWith<$Res> {
       isDeliveryAddress: null == isDeliveryAddress
           ? _self.isDeliveryAddress
           : isDeliveryAddress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       isPrimaryAddress: null == isPrimaryAddress
           ? _self.isPrimaryAddress
           : isPrimaryAddress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
     ));
   }
 }

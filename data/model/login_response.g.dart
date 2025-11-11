@@ -12,8 +12,10 @@ _AddressDto _$AddressDtoFromJson(Map<String, dynamic> json) => _AddressDto(
       city: (json['city'] as num).toInt(),
       township: (json['township'] as num).toInt(),
       streetAddress: json['street_address'] as String,
-      isDeliveryAddress: (json['is_delivery_address'] as num).toInt(),
-      isPrimaryAddress: (json['is_primary_address'] as num).toInt(),
+      isDeliveryAddress: const BoolToIntConverter()
+          .fromJson((json['is_delivery_address'] as num).toInt()),
+      isPrimaryAddress: const BoolToIntConverter()
+          .fromJson((json['is_primary_address'] as num).toInt()),
     );
 
 Map<String, dynamic> _$AddressDtoToJson(_AddressDto instance) =>
@@ -23,6 +25,8 @@ Map<String, dynamic> _$AddressDtoToJson(_AddressDto instance) =>
       'city': instance.city,
       'township': instance.township,
       'street_address': instance.streetAddress,
-      'is_delivery_address': instance.isDeliveryAddress,
-      'is_primary_address': instance.isPrimaryAddress,
+      'is_delivery_address':
+          const BoolToIntConverter().toJson(instance.isDeliveryAddress),
+      'is_primary_address':
+          const BoolToIntConverter().toJson(instance.isPrimaryAddress),
     };

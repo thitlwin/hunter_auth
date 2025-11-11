@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:joy_app/src/feature/address/data/model/bool_to_int_converter.dart';
 
 part 'login_response.freezed.dart';
 part 'login_response.g.dart';
@@ -46,8 +47,12 @@ abstract class AddressDto with _$AddressDto {
     required int city,
     required int township,
     @JsonKey(name: 'street_address') required String streetAddress,
-    @JsonKey(name: 'is_delivery_address') required int isDeliveryAddress,
-    @JsonKey(name: 'is_primary_address') required int isPrimaryAddress,
+    @BoolToIntConverter()
+    @JsonKey(name: 'is_delivery_address')
+    required bool isDeliveryAddress,
+    @JsonKey(name: 'is_primary_address')
+    @BoolToIntConverter()
+    required bool isPrimaryAddress,
   }) = _AddressDto;
 
   factory AddressDto.fromJson(Map<String, dynamic> json) =>
